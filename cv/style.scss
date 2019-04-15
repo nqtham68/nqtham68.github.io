@@ -1,0 +1,58 @@
+/* https://material.io/tools/color/#!/?view.left=0&view.right=0&primary.color=9E9E9E&secondary.color=FB8C00&secondary.text.color=212121 */
+
+$color-primary: #9e9e9e;
+$color-primary-ligth: #cfcfcf;
+$color-primary-dark: #707070;
+$color-secondary: #ffc107;
+$color-secondary-ligth: #fff350;
+$color-secondary-dark: #c79100;
+$text-primary: #212121;
+$text-secondary: #757575;
+$text-ligth: #f1f1f1;
+
+
+body, h1,h2,h3,h4,h5,h6 {font-family: "Titillium Web", sans-serif}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.content {
+    background-color: $color-primary-ligth;
+    height: 1024px;
+}
+
+.head {
+    width: 100%;
+    background-color: $color-primary!important;
+    color: #fff!important;
+}
+
+.btn-download {
+    background-color: $color-secondary!important;
+    color: $text-primary!important;
+
+    &:hover {
+        background-color: $color-secondary-ligth!important;
+    }
+}
+
+.group-title {
+    font-weight: bold;
+    color: $color-secondary-dark;
+    &::after {
+        content: "";
+        display: block;
+        width: 10%;
+        border: 2px solid $color-secondary-dark;
+        border-radius: 2px;
+    }
+}
+
+.progress {
+    background-color: $color-secondary;
+}
+
+.progress-inner {
+    background-color: $color-secondary-dark;
+}
