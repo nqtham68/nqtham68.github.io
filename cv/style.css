@@ -3,43 +3,87 @@ body, h1, h2, h3, h4, h5, h6 {
   font-family: "Titillium Web", sans-serif;
 }
 
-body {
-  background-color: #c5c5c5;
-}
-
-.content {
-  background-color: #9e9e9e;
-}
-
 .head {
+  padding-top: 16px;
+  background-color: #303030 !important;
+  color: #dfdfdf !important;
+}
+
+.avatar {
+  display: inline-block;
+  position: relative;
+}
+
+.avatar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
   width: 100%;
-  background-color: #4f4f4f !important;
-  color: #ececec !important;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-box-shadow: 0 0 10px 0 white, 0 0 20px 0 rgba(0, 255, 255, 0.05);
+          box-shadow: 0 0 10px 0 white, 0 0 20px 0 rgba(0, 255, 255, 0.05);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  clip: rect(420px, 420px, 420px, -20px);
+}
+
+.avatar:hover::before {
+  opacity: 1;
+  clip: rect(-20px, 420px, 420px, -20px);
+}
+
+.avatar::after {
+  content: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 30%;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#313131), to(rgba(97, 97, 97, 0)));
+  background-image: linear-gradient(to top, #313131, rgba(97, 97, 97, 0));
 }
 
 .img-avatar {
-  border: 1px solid transparent;
+  position: relative;
+  border-radius: 50%;
 }
 
-.img-avatar:hover {
-  border: 1px solid #ececec;
+@media (max-width: 600px) {
+  .img-avatar {
+    border-radius: 0;
+    width: 100%;
+  }
+  .img-avatar:hover {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .head {
+    padding-top: 0px;
+  }
+  .avatar {
+    width: 100%;
+  }
+  .avatar::after {
+    content: "";
+  }
 }
 
 .btn-download {
-  background-color: #ff5722 !important;
-  color: #ececec !important;
+  background-color: #616161 !important;
+  color: #dfdfdf !important;
 }
 
 .btn-download:hover {
-  background-color: #cb2f00 !important;
-  color: #f9f9f9 !important;
+  color: #f6f6f6 !important;
 }
 
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  display: -webkit-flex;
   padding: 8px 8px 8px 0;
 }
 
@@ -115,14 +159,14 @@ body {
 
 .title {
   font-weight: bold !important;
-  color: #cb2f00;
+  color: #444444 !important;
 }
 
 .title::after {
   content: "";
   display: block;
   width: 5%;
-  border: 2px solid #cb2f00;
+  border: 2px solid #444444 !important;
   border-radius: 2px;
 }
 
@@ -131,10 +175,10 @@ body {
 }
 
 .progress {
-  background-color: #6f6f6f;
+  background-color: #dfdfdf !important;
 }
 
 .progress-inner {
-  background-color: #912200;
+  background-color: #616161 !important;
 }
 /*# sourceMappingURL=style.css.map */
