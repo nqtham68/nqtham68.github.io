@@ -276,3 +276,11 @@ body {
 @keyframes slide-up {
     to { transform: translateY(0); }
 }
+
+.progress-anim {
+    animation: progress-anim 2.5s ease-in forwards;
+    animation-direction: reverse;
+}
+@keyframes progress-anim {
+    to { width: 10%;}
+}

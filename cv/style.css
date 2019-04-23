@@ -307,4 +307,22 @@ body, h1, h2, h3, h4, h5, h6 {
             transform: translateY(0);
   }
 }
+
+.progress-anim {
+  -webkit-animation: progress-anim 2.5s ease-in forwards;
+          animation: progress-anim 2.5s ease-in forwards;
+  animation-direction: reverse;
+}
+
+@-webkit-keyframes progress-anim {
+  to {
+    width: 10%;
+  }
+}
+
+@keyframes progress-anim {
+  to {
+    width: 10%;
+  }
+}
 /*# sourceMappingURL=style.css.map */
