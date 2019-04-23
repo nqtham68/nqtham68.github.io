@@ -266,3 +266,13 @@ body {
     background-color: $color-theme-l1;
     color: $color-theme-l4;
 }
+
+// scroll effect
+.slide-up {
+    transform: translateY(200px);
+    animation: slide-up 1s ease-out forwards;
+}
+
+@keyframes slide-up {
+    to { transform: translateY(0); }
+}
