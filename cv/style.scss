@@ -17,6 +17,11 @@ body {
     color: $color-theme-l4;
 }
 
+.info-head {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
 .avatar {
     display: inline-block;
     position: relative;
@@ -119,7 +124,7 @@ body {
     float: left;
     width: 100%;
     &.left {
-        width: 18%;
+        width: 20%;
         text-align: right;
         padding: 0 16px 0 8px;
         position: relative;
@@ -143,7 +148,7 @@ body {
         }
     }
     &.right {
-        width: 82%;
+        width: 80%;
         padding: 0 8px 0 16px;
         position: relative;
         
@@ -207,9 +212,16 @@ body {
     content: "\f500"!important; //user-friends
 }
 
+.cont::before {
+    @extend %fa-font;
+    @extend %l-symbol;
+    content: "\f129"!important; //info
+}
+
 .w3-row .row:last-child .left {
     &::after {
-        display: none!important;
+        // display: none!important;
+        bottom: 0px;
     }
 }
 .w3-row .row:first-child .left {
@@ -260,11 +272,13 @@ body {
 
 .progress {
     background-color: $color-theme-l4;
+    border-radius: 2px;
 }
 
 .progress-inner {
     background-color: $color-theme-l1;
     color: $color-theme-l4;
+    border-radius: 2px;
 }
 
 // scroll effect
@@ -283,4 +297,60 @@ body {
 }
 @keyframes progress-anim {
     to { width: 10%;}
+}
+
+.pos-lead {
+    font-weight: bold;
+    font-size: 0.95em;
+    color: $color-theme-d3;
+}
+
+.pos-sub {
+    font-weight: bold;
+    font-size: 0.85em;
+    font-style: italic;
+    color: $color-theme-l1;
+    margin-bottom: 8px;
+}
+
+.pos-detail {
+    color: $color-theme-d3;
+}
+
+.edu-lead {
+    font-weight: bold;
+    color: $color-theme-d3;
+}
+
+.edu-sub {
+    font-weight: bold;
+    font-size: 0.95em;
+    font-style: italic;
+    color: $color-theme;
+}
+
+.ref-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: $color-theme-d3;
+}
+
+.ref-pos {
+    font-weight: bold;
+    color: $color-theme-l1;
+}
+
+.ref-detail {
+    color: $color-theme-d1;
+    margin-right: 16px;
+    i {
+        font-size: 1.6em;
+    }
+}
+
+.cont-detail {
+    color: $color-theme-d1;
+    i {
+        font-size: 1.6em;
+    }
 }

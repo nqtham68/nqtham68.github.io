@@ -10,6 +10,11 @@ body, h1, h2, h3, h4, h5, h6 {
   color: #dfdfdf;
 }
 
+.info-head {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
 .avatar {
   display: inline-block;
   position: relative;
@@ -143,7 +148,7 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .col.left {
-  width: 18%;
+  width: 20%;
   text-align: right;
   padding: 0 16px 0 8px;
   position: relative;
@@ -172,12 +177,12 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .col.right {
-  width: 82%;
+  width: 80%;
   padding: 0 8px 0 16px;
   position: relative;
 }
 
-.exp::before, .skill::before, .software::before, .edu::before, .ref::before {
+.exp::before, .skill::before, .software::before, .edu::before, .ref::before, .cont::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 90;
   font-style: normal;
@@ -188,7 +193,7 @@ body, h1, h2, h3, h4, h5, h6 {
   vertical-align: middle !important;
 }
 
-.exp::before, .skill::before, .software::before, .edu::before, .ref::before {
+.exp::before, .skill::before, .software::before, .edu::before, .ref::before, .cont::before {
   color: #dfdfdf;
   width: 1.8em !important;
   height: 1.8em !important;
@@ -224,8 +229,12 @@ body, h1, h2, h3, h4, h5, h6 {
   content: "" !important;
 }
 
+.cont::before {
+  content: "" !important;
+}
+
 .w3-row .row:last-child .left::after {
-  display: none !important;
+  bottom: 0px;
 }
 
 .w3-row .row:first-child .left::before {
@@ -280,11 +289,13 @@ body, h1, h2, h3, h4, h5, h6 {
 
 .progress {
   background-color: #dfdfdf;
+  border-radius: 2px;
 }
 
 .progress-inner {
   background-color: #818181;
   color: #dfdfdf;
+  border-radius: 2px;
 }
 
 .slide-up {
@@ -324,5 +335,63 @@ body, h1, h2, h3, h4, h5, h6 {
   to {
     width: 10%;
   }
+}
+
+.pos-lead {
+  font-weight: bold;
+  font-size: 0.95em;
+  color: #444444;
+}
+
+.pos-sub {
+  font-weight: bold;
+  font-size: 0.85em;
+  font-style: italic;
+  color: #818181;
+  margin-bottom: 8px;
+}
+
+.pos-detail {
+  color: #444444;
+}
+
+.edu-lead {
+  font-weight: bold;
+  color: #444444;
+}
+
+.edu-sub {
+  font-weight: bold;
+  font-size: 0.95em;
+  font-style: italic;
+  color: #616161;
+}
+
+.ref-name {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #444444;
+}
+
+.ref-pos {
+  font-weight: bold;
+  color: #818181;
+}
+
+.ref-detail {
+  color: #575757;
+  margin-right: 16px;
+}
+
+.ref-detail i {
+  font-size: 1.6em;
+}
+
+.cont-detail {
+  color: #575757;
+}
+
+.cont-detail i {
+  font-size: 1.6em;
 }
 /*# sourceMappingURL=style.css.map */
