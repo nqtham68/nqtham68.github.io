@@ -50,6 +50,12 @@ $(document).ready(function () {
             if($el.visible(true)) {
                 if(!el.scrollEffect) {
                     $el.addClass($el.attr('scroll-effect'));
+                    el.scrollEffect = true;
+                    $el.find('[scroll-effect]').each(function(j, cel) {
+                        var $cel = $(cel);
+                        $(cel).addClass($cel.attr('scroll-effect'));
+                        cel.scrollEffect = true;
+                    })
                 }
                 toRemoves.push(i);
             }
