@@ -24,7 +24,7 @@
             viewTop = $w.scrollTop(),
             viewBottom = viewTop + $w.height(),
             _top = $t.offset().top;
-        return _top >= viewBottom && !$t.visible(true);
+        return _top >= viewTop && !$t.visible(true);
     }
 
 })(jQuery);
@@ -33,8 +33,13 @@ $(document).ready(function () {
     var elems = $(document).find('[scroll-effect]');
     var toRemoves = [];
     elems.each(function(i, el) {
-        if(! $(el).allowScrollEffect()) {
+        $el = $(el);
+        if(! $el.allowScrollEffect()) {
             el.scrollEffect = true;         // mask as done
+            if($el.attr('scroll-effect') && $el.attr('progress')) {
+                $el.addClass($el.attr('scroll-effect'));
+                $el.width($el.attr('progress'));
+            }
             toRemoves.push(i);
         }
     });
@@ -51,9 +56,10 @@ $(document).ready(function () {
                 if(!el.scrollEffect) {
                     $el.addClass($el.attr('scroll-effect'));
                     el.scrollEffect = true;
-                    $el.find('[scroll-effect]').each(function(j, cel) {
+                    $el.find('[scroll-effect=progress-anim]').each(function(j, cel) {
                         var $cel = $(cel);
-                        $(cel).addClass($cel.attr('scroll-effect'));
+                        $cel.addClass($cel.attr('scroll-effect'));
+                        $cel.width($cel.attr('progress'));
                         cel.scrollEffect = true;
                     })
                 }

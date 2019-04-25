@@ -273,7 +273,9 @@ body, h1, h2, h3, h4, h5, h6 {
   position: absolute;
   right: 0px;
   left: 35px;
-  border: 1.5px solid #444444;
+  height: 3px;
+  background-color: #444444;
+  border: 1px solid #444444;
   border-radius: 2px;
 }
 
@@ -296,6 +298,7 @@ body, h1, h2, h3, h4, h5, h6 {
   background-color: #818181;
   color: #dfdfdf;
   border-radius: 2px;
+  width: 0;
 }
 
 .slide-up {
@@ -303,6 +306,8 @@ body, h1, h2, h3, h4, h5, h6 {
           transform: translateY(200px);
   -webkit-animation: slide-up 1s ease-out forwards;
           animation: slide-up 1s ease-out forwards;
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
 }
 
 @-webkit-keyframes slide-up {
@@ -320,21 +325,70 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .progress-anim {
-  -webkit-animation: progress-anim 2.5s ease-in forwards;
-          animation: progress-anim 2.5s ease-in forwards;
-  animation-direction: reverse;
+  -webkit-transition: width 2s ease-out;
+  transition: width 2s ease-out;
 }
 
 @-webkit-keyframes progress-anim {
   to {
-    width: 10%;
+    width: 0%;
   }
 }
 
 @keyframes progress-anim {
   to {
-    width: 10%;
+    width: 0%;
   }
+}
+
+.w3-row[scroll-effect="slide-up"] > .row:nth-child(1) [scroll-effect="progress-anim"] {
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+.w3-row[scroll-effect="slide-up"] > .row:nth-child(2) [scroll-effect="progress-anim"] {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.w3-row[scroll-effect="slide-up"] > .row:nth-child(3) [scroll-effect="progress-anim"] {
+  -webkit-transition-delay: 0.45s;
+          transition-delay: 0.45s;
+}
+
+.w3-row[scroll-effect="slide-up"] > .row:nth-child(4) [scroll-effect="progress-anim"] {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+.w3-row[scroll-effect="slide-up"] > .row:nth-child(5) [scroll-effect="progress-anim"] {
+  -webkit-transition-delay: 0.75s;
+          transition-delay: 0.75s;
+}
+
+.w3-row[scroll-effect="slide-up"] > .row:nth-child(6) [scroll-effect="progress-anim"] {
+  -webkit-transition-delay: 0.9s;
+          transition-delay: 0.9s;
+}
+
+.w3-row[scroll-effect="slide-up"] > .row:nth-child(7) [scroll-effect="progress-anim"] {
+  -webkit-transition-delay: 1.05s;
+          transition-delay: 1.05s;
+}
+
+.w3-row[scroll-effect="slide-up"] > .row:nth-child(8) [scroll-effect="progress-anim"] {
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
+}
+
+.w3-row[scroll-effect="slide-up"] > .row:nth-child(9) [scroll-effect="progress-anim"] {
+  -webkit-transition-delay: 1.35s;
+          transition-delay: 1.35s;
+}
+
+.w3-row[scroll-effect="slide-up"] > .row:nth-child(10) [scroll-effect="progress-anim"] {
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
 }
 
 .pos-lead {

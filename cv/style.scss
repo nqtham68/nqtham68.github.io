@@ -257,7 +257,9 @@ body {
         position: absolute;
         right: 0px;
         left: 35px;
-        border: 1.5px solid $color-theme-d3;
+        height: 3px;
+        background-color: $color-theme-d3;
+        border: 1px solid $color-theme-d3;
         border-radius: 2px;
     }
 }
@@ -279,12 +281,14 @@ body {
     background-color: $color-theme-l1;
     color: $color-theme-l4;
     border-radius: 2px;
+    width: 0;
 }
 
 // scroll effect
 .slide-up {
     transform: translateY(200px);
     animation: slide-up 1s ease-out forwards;
+    animation-delay: 0.25s;
 }
 
 @keyframes slide-up {
@@ -292,11 +296,20 @@ body {
 }
 
 .progress-anim {
-    animation: progress-anim 2.5s ease-in forwards;
-    animation-direction: reverse;
+    // animation: progress-anim 2.5s ease-in forwards;
+    // animation-direction: reverse;
+    transition: width 2s ease-out;
 }
 @keyframes progress-anim {
-    to { width: 10%;}
+    to { width: 0%;}
+}
+
+@for $i from 1 through 10 {
+    .w3-row[scroll-effect="slide-up"] > .row:nth-child(#{$i}) {
+        [scroll-effect="progress-anim"] {
+            transition-delay: #{$i * 0.15}s;
+        }        
+    }
 }
 
 .pos-lead {
