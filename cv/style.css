@@ -10,14 +10,30 @@ body, h1, h2, h3, h4, h5, h6 {
   color: #dfdfdf;
 }
 
+.info-main {
+  padding: 0 16px;
+}
+
+.avatar-container {
+  display: inline-block;
+}
+
+.info-name {
+  display: inline-block;
+  margin: auto 6px;
+}
+
 .info-head {
   padding-left: 8px;
   padding-right: 8px;
+  font-size: 1.1em;
+  color: #ffc14b;
 }
 
 .avatar {
   display: inline-block;
   position: relative;
+  margin: auto 6px;
 }
 
 .avatar::before {
@@ -28,17 +44,17 @@ body, h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  opacity: 0;
+  opacity: 1;
   -webkit-box-shadow: 0 0 10px 0 white, 0 0 20px 0 rgba(0, 255, 255, 0.05);
           box-shadow: 0 0 10px 0 white, 0 0 20px 0 rgba(0, 255, 255, 0.05);
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
-  clip: rect(420px, 420px, 420px, -20px);
+  clip: rect(170px, 170px, 170px, -20px);
 }
 
 .avatar:hover::before {
   opacity: 1;
-  clip: rect(-20px, 420px, 420px, -20px);
+  clip: rect(-20px, 170px, 170px, -20px);
 }
 
 .avatar::after {
@@ -55,29 +71,8 @@ body, h1, h2, h3, h4, h5, h6 {
 .img-avatar {
   position: relative;
   border-radius: 50%;
-}
-
-@media (max-width: 600px) {
-  .img-avatar {
-    border-radius: 0;
-    width: 100%;
-  }
-  .img-avatar:hover {
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-  .head {
-    padding-top: 0px;
-  }
-  .avatar {
-    width: 100%;
-  }
-  .avatar::after {
-    content: "";
-  }
-  .avatar::before {
-    content: none;
-  }
+  width: 100%;
+  max-width: 150px;
 }
 
 .head-name {
