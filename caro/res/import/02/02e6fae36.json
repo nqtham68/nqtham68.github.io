@@ -1,0 +1,12 @@
+[
+  {
+    "__type__": "cc.TTFFont",
+    "_name": "accid",
+    "_native": "accid.ttf"
+  },
+  {
+    "__type__": "cc.TTFFont",
+    "_name": "VFRANKO_0",
+    "_native": "VFRANKO_0.ttf"
+  }
+]

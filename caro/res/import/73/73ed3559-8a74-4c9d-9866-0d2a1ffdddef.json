@@ -1,0 +1,44 @@
+[
+  {
+    "__type__": "cc.Prefab",
+    "_name": "Global",
+    "data": {
+      "__id__": 1
+    }
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "global",
+    "_level": 1,
+    "_components": [
+      {
+        "__type__": "0facaTpAb1ASKpJUhUJgEVx",
+        "node": {
+          "__id__": 1
+        }
+      },
+      {
+        "__type__": "822fd5OyCBN+IP1FitS+JSm",
+        "node": {
+          "__id__": 1
+        }
+      }
+    ],
+    "_prefab": {
+      "__type__": "cc.PrefabInfo",
+      "root": {
+        "__id__": 1
+      },
+      "asset": {
+        "__uuid__": "737TVZinRMnZhmDSof/d3v"
+      },
+      "fileId": "fdJoalQppLpbaTzzX/KCDC"
+    },
+    "_scale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    }
+  }
+]
