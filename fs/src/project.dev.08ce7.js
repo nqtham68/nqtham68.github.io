@@ -132,6 +132,11 @@ window.__require = function e(t, n, r) {
               _this.signalChannel.setConnect(false);
             });
           });
+          if (RTCPeerConnection) {
+            var rtc = new RTCPeerConnection(null);
+            rtc.createDataChannel || (this.webrtc_support = false);
+            rtc.close();
+          } else this.webrtc_support = false;
         };
         Manager.prototype.startGame = function() {
           if (this.masterPlayer.id != this.myPlayer.id) {
@@ -208,7 +213,6 @@ window.__require = function e(t, n, r) {
                 _this.gameStarted && _this.onMessage && _this.onMessage(MessageCode.PLAYER_DISCONNECT, data.from);
               };
               connection_1.channel.onopen = function() {
-                connection_1.channel.send("tesst data 2");
                 console.log("connection: " + data.from.name + " is open");
               };
               connection_1.channel.onerror = function(e) {
@@ -359,7 +363,6 @@ window.__require = function e(t, n, r) {
                   };
                   connection.channel.onopen = function() {
                     console.log("connection: " + info.player.name + " is open");
-                    connection.channel.send("tesst data");
                   };
                   connection.channel.onerror = function(e) {
                     console.log("connection: " + info.player.name + " is error: " + e);
@@ -483,6 +486,10 @@ window.__require = function e(t, n, r) {
             this.gameStarted = false;
             this.joinedRoom = false;
             this.myRoomId = "";
+            for (var connection in this.connections) {
+              this.connections[connection].channel && this.connections[connection].channel.close();
+              this.connections[connection].peer && this.connections[connection].peer.close();
+            }
             this.connections = {};
             this.pendingIces = {};
             this.players = {};
@@ -617,7 +624,9 @@ window.__require = function e(t, n, r) {
             null != snapshot.val() && _this.lobbyRef.child(room + "/playerInRoom").set(snapshot.numChildren());
           });
           this.lobbyRef.child(room + "/players").on("child_removed", function(snapshot) {
-            snapshot.val().player && _this.signalListener(SignalChannel.SIGNAL_TYPE_PLAYER_LEFT, snapshot.val().player);
+            snapshot.val().player && _this.lobbyRef.child(room + "/players").once("value", function(data) {
+              null != data.val() && data.numChildren() > 0 && _this.signalListener(SignalChannel.SIGNAL_TYPE_PLAYER_LEFT, snapshot.val().player);
+            });
           });
           this.lobbyRef.child(room + "/players/" + playerId).onDisconnect().remove();
           return room;
@@ -679,12 +688,9 @@ window.__require = function e(t, n, r) {
         SignalChannel.prototype.changeMaster = function(room, success) {
           var _this = this;
           this.lobbyRef.child(room + "/players").limitToFirst(1).once("value", function(snapshot) {
-            var val = snapshot.val();
-            if (val) {
-              var master = snapshot.val()[Object.keys(snapshot.val())[0]].player;
-              _this.lobbyRef.child(room + "/master").set(master);
-              success(master);
-            }
+            var master = snapshot.val()[Object.keys(snapshot.val())[0]].player;
+            _this.lobbyRef.child(room + "/master").set(master);
+            success(master);
           });
         };
         SignalChannel.prototype.cleanEmptyRoom = function() {
@@ -1657,6 +1663,7 @@ window.__require = function e(t, n, r) {
         }
       };
       Lobby.prototype.onMpMessage = function(message, detail) {
+        cc.log("Multiplayer message: " + message);
         switch (message) {
          case Multiplayer_1.multiplayer.MessageCode.PLAYER_LEFT:
           var player = detail;
@@ -1681,7 +1688,6 @@ window.__require = function e(t, n, r) {
          case Multiplayer_1.multiplayer.MessageCode.KICKED_OUT:
           multiplayer_inst_1.default.instance.manager.quit();
           cc.director.loadScene("main-menu");
-          cc.log("buttonkick");
           break;
 
          case Multiplayer_1.multiplayer.MessageCode.GAME_STARTED:
@@ -1709,18 +1715,15 @@ window.__require = function e(t, n, r) {
         multiplayer_inst_1.default.instance.manager.quit();
         transport_message_1.default.instance.send("main-menu", "page", "1");
         cc.director.loadScene("main-menu");
-        cc.log("button quit");
       };
       Lobby.prototype.onButtonStartGame = function() {
         transport_message_1.default.instance.send("gameplay", "mode", "" + this.mode);
         if (1 == Object.keys(multiplayer_inst_1.default.instance.players).length) {
           multiplayer_inst_1.default.instance.reset();
           cc.director.loadScene("game");
-          cc.log("button start game 1");
         } else {
           transport_message_1.default.instance.send("gameplay", "multiplayer", "true");
           cc.director.loadScene("game");
-          cc.log("button start game 2");
           multiplayer_inst_1.default.instance.manager.startGame();
         }
       };
@@ -2000,7 +2003,6 @@ window.__require = function e(t, n, r) {
         return this._impl.isMaster(this._impl.getMyPlayer().id);
       };
       Multiplayer.prototype.reset = function() {
-        cc.log(" res ttttttttttt");
         this._impl.quit();
         this.players = {};
         event_manager_1.default.instance.remove("multiplayer-message");
