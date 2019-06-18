@@ -132,11 +132,6 @@ window.__require = function e(t, n, r) {
               _this.signalChannel.setConnect(false);
             });
           });
-          if (RTCPeerConnection) {
-            var rtc = new RTCPeerConnection(null);
-            rtc.createDataChannel || (this.webrtc_support = false);
-            rtc.close();
-          } else this.webrtc_support = false;
         };
         Manager.prototype.startGame = function() {
           if (this.masterPlayer.id != this.myPlayer.id) {
@@ -213,6 +208,7 @@ window.__require = function e(t, n, r) {
                 _this.gameStarted && _this.onMessage && _this.onMessage(MessageCode.PLAYER_DISCONNECT, data.from);
               };
               connection_1.channel.onopen = function() {
+                connection_1.channel.send("tesst data 2");
                 console.log("connection: " + data.from.name + " is open");
               };
               connection_1.channel.onerror = function(e) {
@@ -363,6 +359,7 @@ window.__require = function e(t, n, r) {
                   };
                   connection.channel.onopen = function() {
                     console.log("connection: " + info.player.name + " is open");
+                    connection.channel.send("tesst data");
                   };
                   connection.channel.onerror = function(e) {
                     console.log("connection: " + info.player.name + " is error: " + e);
@@ -486,10 +483,6 @@ window.__require = function e(t, n, r) {
             this.gameStarted = false;
             this.joinedRoom = false;
             this.myRoomId = "";
-            for (var connection in this.connections) {
-              this.connections[connection].channel && this.connections[connection].channel.close();
-              this.connections[connection].peer && this.connections[connection].peer.close();
-            }
             this.connections = {};
             this.pendingIces = {};
             this.players = {};
@@ -686,9 +679,12 @@ window.__require = function e(t, n, r) {
         SignalChannel.prototype.changeMaster = function(room, success) {
           var _this = this;
           this.lobbyRef.child(room + "/players").limitToFirst(1).once("value", function(snapshot) {
-            var master = snapshot.val()[Object.keys(snapshot.val())[0]].player;
-            _this.lobbyRef.child(room + "/master").set(master);
-            success(master);
+            var val = snapshot.val();
+            if (val) {
+              var master = snapshot.val()[Object.keys(snapshot.val())[0]].player;
+              _this.lobbyRef.child(room + "/master").set(master);
+              success(master);
+            }
           });
         };
         SignalChannel.prototype.cleanEmptyRoom = function() {
