@@ -1583,6 +1583,28 @@ window.__require = function e(t, n, r) {
   lobby: [ function(require, module, exports) {
     "use strict";
     cc._RF.push(module, "78e034AvURBA5StEBh6PAs6", "lobby");
+    "use strict";
+    var __extends = this && this.__extends || function() {
+      var extendStatics = Object.setPrototypeOf || {
+        __proto__: []
+      } instanceof Array && function(d, b) {
+        d.__proto__ = b;
+      } || function(d, b) {
+        for (var p in b) b.hasOwnProperty(p) && (d[p] = b[p]);
+      };
+      return function(d, b) {
+        extendStatics(d, b);
+        function __() {
+          this.constructor = d;
+        }
+        d.prototype = null === b ? Object.create(b) : (__.prototype = b.prototype, new __());
+      };
+    }();
+    var __decorate = this && this.__decorate || function(decorators, target, key, desc) {
+      var c = arguments.length, r = c < 3 ? target : null === desc ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+      if ("object" === typeof Reflect && "function" === typeof Reflect.decorate) r = Reflect.decorate(decorators, target, key, desc); else for (var i = decorators.length - 1; i >= 0; i--) (d = decorators[i]) && (r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r);
+      return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
@@ -1659,6 +1681,7 @@ window.__require = function e(t, n, r) {
          case Multiplayer_1.multiplayer.MessageCode.KICKED_OUT:
           multiplayer_inst_1.default.instance.manager.quit();
           cc.director.loadScene("main-menu");
+          cc.log("buttonkick");
           break;
 
          case Multiplayer_1.multiplayer.MessageCode.GAME_STARTED:
@@ -1686,15 +1709,18 @@ window.__require = function e(t, n, r) {
         multiplayer_inst_1.default.instance.manager.quit();
         transport_message_1.default.instance.send("main-menu", "page", "1");
         cc.director.loadScene("main-menu");
+        cc.log("button quit");
       };
       Lobby.prototype.onButtonStartGame = function() {
         transport_message_1.default.instance.send("gameplay", "mode", "" + this.mode);
         if (1 == Object.keys(multiplayer_inst_1.default.instance.players).length) {
           multiplayer_inst_1.default.instance.reset();
           cc.director.loadScene("game");
+          cc.log("button start game 1");
         } else {
           transport_message_1.default.instance.send("gameplay", "multiplayer", "true");
           cc.director.loadScene("game");
+          cc.log("button start game 2");
           multiplayer_inst_1.default.instance.manager.startGame();
         }
       };
@@ -1883,6 +1909,7 @@ window.__require = function e(t, n, r) {
   "multiplayer-inst": [ function(require, module, exports) {
     "use strict";
     cc._RF.push(module, "b383d7hTlZCmbFp62HUeMTB", "multiplayer-inst");
+    "use strict";
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
@@ -1973,6 +2000,7 @@ window.__require = function e(t, n, r) {
         return this._impl.isMaster(this._impl.getMyPlayer().id);
       };
       Multiplayer.prototype.reset = function() {
+        cc.log(" res ttttttttttt");
         this._impl.quit();
         this.players = {};
         event_manager_1.default.instance.remove("multiplayer-message");
@@ -2635,6 +2663,7 @@ window.__require = function e(t, n, r) {
   "transport-message": [ function(require, module, exports) {
     "use strict";
     cc._RF.push(module, "e8a69h3FD5LjqkRXtnwnMR+", "transport-message");
+    "use strict";
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
@@ -2657,8 +2686,12 @@ window.__require = function e(t, n, r) {
       };
       TransportMessage.prototype.get = function(name, message, deleteAfterRead) {
         void 0 === deleteAfterRead && (deleteAfterRead = true);
-        if (this._messages[name] && null != this._messages[name][message]) return this._messages[name][message];
-        return null;
+        var content = null;
+        if (this._messages[name] && null != this._messages[name][message]) {
+          content = this._messages[name][message];
+          deleteAfterRead && delete this._messages[name][message];
+        }
+        return content;
       };
       TransportMessage._instance = null;
       return TransportMessage;
