@@ -11,7 +11,7 @@ if(!/mobile|android|iphone|ipad/.test(window.navigator.userAgent.toLowerCase()))
     // set size for canvas
     // var w = window.innerWidth;
     var h = window.innerHeight - 30; // 10 = window.pageYOffset
-    var ratio = 640 / 960;  // w/h -> game design resolution
+    var ratio = 1280 / 720;  // w/h -> game design resolution
     var h_new = h;          // fix height of window to height of game (desktop is always landscape)
     var w_new = Math.floor(h_new * ratio);
     // console.log("Desktop new w: " + w_new + " h:" + h_new);

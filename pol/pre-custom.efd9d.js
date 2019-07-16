@@ -31,35 +31,35 @@ function preventTouch(evt) {
     evt.preventDefault();
 }
 
-// ads and gtm config
-var enableAds = false;    
-var productKey = "";
-var gtmID = "";
-if(enableAds) {
-    gtmID = 'GTM-W4F73N';
-    productKey = "template";
-} else {
-    gtmID = 'GTM-K74X66';
-    productKey = "template";
-}
-dataLayer = [];
-dataLayer.push({
-    'event': 'pageLoad',
-    'publisher': 'GAMELOFT',
-    'productKey': '' + productKey
-});
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer',gtmID);
+// // ads and gtm config
+// var enableAds = false;    
+// var productKey = "";
+// var gtmID = "";
+// if(enableAds) {
+//     gtmID = 'GTM-W4F73N';
+//     productKey = "template";
+// } else {
+//     gtmID = 'GTM-K74X66';
+//     productKey = "template";
+// }
+// dataLayer = [];
+// dataLayer.push({
+//     'event': 'pageLoad',
+//     'publisher': 'GAMELOFT',
+//     'productKey': '' + productKey
+// });
+// (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+//     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+//     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+//     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+// })(window,document,'script','dataLayer',gtmID);
 
-// int ads
-if (enableAds)
-{
-    loadOrderScript('//imasdk.googleapis.com/js/sdkloader/ima3.js', 'adsSDK.259ad.js?v=0.0.9');
-    // loadOrderScript('//imasdk.googleapis.com/js/sdkloader/ima3_debug.js', 'adsSDK.259ad.js');			
-}
+// // int ads
+// if (enableAds)
+// {
+//     loadOrderScript('//imasdk.googleapis.com/js/sdkloader/ima3.js', 'adsSDK.259ad.js?v=0.0.9');
+//     // loadOrderScript('//imasdk.googleapis.com/js/sdkloader/ima3_debug.js', 'adsSDK.259ad.js');			
+// }
 
 // ludi sdk for save load database -> not need now
 // should load ludi before fb
