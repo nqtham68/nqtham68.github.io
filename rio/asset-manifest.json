@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9a5fee56.chunk.css",
+    "main.js": "/static/js/main.cf66e75a.chunk.js",
+    "main.js.map": "/static/js/main.cf66e75a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a59cb835.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a59cb835.js.map",
+    "static/js/2.0a3246d6.chunk.js": "/static/js/2.0a3246d6.chunk.js",
+    "static/js/2.0a3246d6.chunk.js.map": "/static/js/2.0a3246d6.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.d15cea74d7275ff49946e2ebd1ddeee3.js": "/precache-manifest.d15cea74d7275ff49946e2ebd1ddeee3.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.9a5fee56.chunk.css.map": "/static/css/main.9a5fee56.chunk.css.map",
+    "static/media/1.png": "/static/media/1.cdd86c56.png",
+    "static/media/2.png": "/static/media/2.b92a7fff.png",
+    "static/media/3.png": "/static/media/3.cdd86c56.png",
+    "static/media/4.png": "/static/media/4.9cb0e72d.png",
+    "static/media/index.scss": "/static/media/Lunchtype_21-Regular.43003d91.ttf",
+    "static/media/bell.fca304fc.svg": "/static/media/bell.fca304fc.svg",
+    "static/media/calendar-app.7cb9b372.svg": "/static/media/calendar-app.7cb9b372.svg",
+    "static/media/calendar.e9eedb4c.svg": "/static/media/calendar.e9eedb4c.svg",
+    "static/media/club-img-1.png": "/static/media/club-img-1.94178d05.png",
+    "static/media/cog.c37487c4.svg": "/static/media/cog.c37487c4.svg",
+    "static/media/console.d314a00c.svg": "/static/media/console.d314a00c.svg",
+    "static/media/default_image.png": "/static/media/default_image.89ab208e.png",
+    "static/media/food-order.png": "/static/media/food-order.22953d1d.png",
+    "static/media/fruit-app.82f20718.svg": "/static/media/fruit-app.82f20718.svg",
+    "static/media/go-green.png": "/static/media/go-green.af4a65dd.png",
+    "static/media/home.e709e655.svg": "/static/media/home.e709e655.svg",
+    "static/media/log-out.336d8b25.svg": "/static/media/log-out.336d8b25.svg",
+    "static/media/maps-app.bdc7a5f8.svg": "/static/media/maps-app.bdc7a5f8.svg",
+    "static/media/news.png": "/static/media/news.5ef57003.png",
+    "static/media/office-tracker.png": "/static/media/office-tracker.6cda7c5d.png",
+    "static/media/tree-gross-outline-app.eaf79555.svg": "/static/media/tree-gross-outline-app.eaf79555.svg",
+    "static/media/weight-app.9541d1d4.svg": "/static/media/weight-app.9541d1d4.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a59cb835.js",
+    "static/js/2.0a3246d6.chunk.js",
+    "static/css/main.9a5fee56.chunk.css",
+    "static/js/main.cf66e75a.chunk.js"
+  ]
+}
