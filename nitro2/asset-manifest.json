@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/nitro/static/css/main.ecc444cf.chunk.css",
+    "main.js": "/nitro/static/js/main.e86061f3.chunk.js",
+    "main.js.map": "/nitro/static/js/main.e86061f3.chunk.js.map",
+    "runtime-main.js": "/nitro/static/js/runtime-main.039e6d02.js",
+    "runtime-main.js.map": "/nitro/static/js/runtime-main.039e6d02.js.map",
+    "static/js/2.0a3246d6.chunk.js": "/nitro/static/js/2.0a3246d6.chunk.js",
+    "static/js/2.0a3246d6.chunk.js.map": "/nitro/static/js/2.0a3246d6.chunk.js.map",
+    "index.html": "/nitro/index.html",
+    "precache-manifest.248c78695f1dbd0c68c6bed57f856f7c.js": "/nitro/precache-manifest.248c78695f1dbd0c68c6bed57f856f7c.js",
+    "service-worker.js": "/nitro/service-worker.js",
+    "static/css/main.ecc444cf.chunk.css.map": "/nitro/static/css/main.ecc444cf.chunk.css.map",
+    "static/media/1.png": "/nitro/static/media/1.cdd86c56.png",
+    "static/media/2.png": "/nitro/static/media/2.b92a7fff.png",
+    "static/media/3.png": "/nitro/static/media/3.cdd86c56.png",
+    "static/media/4.png": "/nitro/static/media/4.9cb0e72d.png",
+    "static/media/index.scss": "/nitro/static/media/Lunchtype_21-Regular.43003d91.ttf",
+    "static/media/bell.fca304fc.svg": "/nitro/static/media/bell.fca304fc.svg",
+    "static/media/calendar-app.7cb9b372.svg": "/nitro/static/media/calendar-app.7cb9b372.svg",
+    "static/media/calendar.e9eedb4c.svg": "/nitro/static/media/calendar.e9eedb4c.svg",
+    "static/media/club-img-1.png": "/nitro/static/media/club-img-1.94178d05.png",
+    "static/media/cog.c37487c4.svg": "/nitro/static/media/cog.c37487c4.svg",
+    "static/media/console.d314a00c.svg": "/nitro/static/media/console.d314a00c.svg",
+    "static/media/default_image.png": "/nitro/static/media/default_image.89ab208e.png",
+    "static/media/food-order.png": "/nitro/static/media/food-order.22953d1d.png",
+    "static/media/fruit-app.82f20718.svg": "/nitro/static/media/fruit-app.82f20718.svg",
+    "static/media/go-green.png": "/nitro/static/media/go-green.af4a65dd.png",
+    "static/media/home.e709e655.svg": "/nitro/static/media/home.e709e655.svg",
+    "static/media/log-out.336d8b25.svg": "/nitro/static/media/log-out.336d8b25.svg",
+    "static/media/maps-app.bdc7a5f8.svg": "/nitro/static/media/maps-app.bdc7a5f8.svg",
+    "static/media/news.png": "/nitro/static/media/news.5ef57003.png",
+    "static/media/office-tracker.png": "/nitro/static/media/office-tracker.6cda7c5d.png",
+    "static/media/tree-gross-outline-app.eaf79555.svg": "/nitro/static/media/tree-gross-outline-app.eaf79555.svg",
+    "static/media/weight-app.9541d1d4.svg": "/nitro/static/media/weight-app.9541d1d4.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.039e6d02.js",
+    "static/js/2.0a3246d6.chunk.js",
+    "static/css/main.ecc444cf.chunk.css",
+    "static/js/main.e86061f3.chunk.js"
+  ]
+}
