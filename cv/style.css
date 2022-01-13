@@ -24,8 +24,8 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .info-head {
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
   font-size: 1.1em;
   color: #ffc14b;
 }
@@ -79,7 +79,12 @@ body, h1, h2, h3, h4, h5, h6 {
   color: #f6f6f6;
 }
 
+.head-subtitle {
+  margin-top: 0;
+}
+
 .btn-download {
+  display: inline-block;
   background-color: transparent !important;
   border: 2px solid #616161;
   border-radius: 4px;
@@ -442,5 +447,17 @@ body, h1, h2, h3, h4, h5, h6 {
 
 .cont-detail i {
   font-size: 1.6em;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 /*# sourceMappingURL=style.css.map */

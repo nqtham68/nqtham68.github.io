@@ -28,8 +28,8 @@ body {
     margin: auto 6px;
 }
 .info-head {
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
     font-size: 1.1em;
     color: #ffc14b;
 }
@@ -99,7 +99,12 @@ body {
     color: $color-theme-l5;
 }
 
+.head-subtitle {
+    margin-top: 0;
+}
+
 .btn-download {
+    display: inline-block;
     background-color: transparent!important;
     border: 2px solid $color-theme;
     border-radius: 4px;
@@ -383,4 +388,10 @@ body {
     i {
         font-size: 1.6em;
     }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
